@@ -1,0 +1,66 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card custom-card">
+        <div class="card-body">
+          <h2 class="text-center text-white">Update Profile</h2>
+          <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label class="text-white">Name</label>
+              <input type="text" class="form-control" formControlName="name">
+              <div *ngIf="updateForm.get('name')?.invalid && (updateForm.get('name')?.dirty || updateForm.get('name')?.touched)" class="text-danger">
+                <div *ngIf="updateForm.get('name')?.errors?.['required']">Name is mandatory</div>
+                <div *ngIf="updateForm.get('name')?.errors?.['minlength']">Name must be at least 2 characters long</div>
+                <div *ngIf="updateForm.get('name')?.errors?.['maxlength']">Name must be less than 50 characters</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="text-white">Email</label>
+              <input type="email" class="form-control" formControlName="email">
+              <div *ngIf="updateForm.get('email')?.invalid && (updateForm.get('email')?.dirty || updateForm.get('email')?.touched)" class="text-danger">
+                <div *ngIf="updateForm.get('email')?.errors?.['required']">Email is mandatory</div>
+                <div *ngIf="updateForm.get('email')?.errors?.['email']">Email should be valid</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="text-white">Phone</label>
+              <input type="text" class="form-control" formControlName="phone">
+              <div *ngIf="updateForm.get('phone')?.invalid && (updateForm.get('phone')?.dirty || updateForm.get('phone')?.touched)" class="text-danger">
+                <div *ngIf="updateForm.get('phone')?.errors?.['required']">Phone number is mandatory</div>
+                <div *ngIf="updateForm.get('phone')?.errors?.['pattern']">Phone number must be exactly 10 digits</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="text-white">Address</label>
+              <input type="text" class="form-control" formControlName="address">
+              <div *ngIf="updateForm.get('address')?.invalid && (updateForm.get('address')?.dirty || updateForm.get('address')?.touched)" class="text-danger">
+                <div *ngIf="updateForm.get('address')?.errors?.['required']">Address is mandatory</div>
+                <div *ngIf="updateForm.get('address')?.errors?.['minlength']">Address must be at least 10 characters long</div>
+                <div *ngIf="updateForm.get('address')?.errors?.['maxlength']">Address must be less than 100 characters</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="text-white">Password</label>
+              <input type="password" class="form-control" formControlName="password">
+              <div *ngIf="updateForm.get('password')?.invalid && (updateForm.get('password')?.dirty || updateForm.get('password')?.touched)" class="text-danger">
+                <div *ngIf="updateForm.get('password')?.errors?.['required']">Password is mandatory</div>
+                <div *ngIf="updateForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long</div>
+                <div *ngIf="updateForm.get('password')?.errors?.['maxlength']">Password must be less than 20 characters</div>
+                <div *ngIf="updateForm.get('password')?.errors?.['pattern']">Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character</div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-yellow m-2" [disabled]="updateForm.invalid">Update Profile</button>
+            <button type="button" class="btn btn-yellow m-2" (click)="gotoprofile()">Cancel</button>
+          </form>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

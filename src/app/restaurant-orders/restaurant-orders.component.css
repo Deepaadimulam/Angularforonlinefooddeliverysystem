@@ -1,0 +1,46 @@
+.previous-orders-container {
+    padding: 20px;
+  }
+  
+  .order-card {
+    background-color: #6c63ff; /* Dark purple background */
+    color: yellow; /* Yellow text */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-weight: bold; /* Increase font weight */
+  }
+  
+  .order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .order-card h4, .order-card h5 {
+    margin-bottom: 10px;
+    font-weight: bold; /* Increase font weight */
+  }
+  
+  .order-card p {
+    margin: 5px 0;
+    font-weight: bold; /* Increase font weight */
+  }
+  
+  .order-card ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-card li {
+    margin: 5px 0;
+    font-weight: bold; /* Increase font weight */
+  }
+  
+  .no-orders {
+    color: #ffc107; /* Yellow text */
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold; /* Increase font weight */
+  }

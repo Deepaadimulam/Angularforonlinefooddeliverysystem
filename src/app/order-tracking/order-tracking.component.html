@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <h2>Order Tracking</h2>
+  <div *ngIf="order">
+    <p>Order ID: {{ order.orderID }}</p>
+    <p>Status: {{ order.status }}</p>
+    <p>Total Amount: {{ order.totalAmount }}</p>
+    <h3>Customer Details</h3>
+    <p>Name: {{ order.customer.name }}</p>
+    <p>Email: {{ order.customer.email }}</p>
+    <h3>Menu Items</h3>
+    <ul>
+      <li *ngFor="let item of menuItems">
+        {{ item.name }} - Price: {{ item.price | currency:'₹' }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="delivery">
+    <h3>Delivery Details</h3>
+    <p>Delivery ID: {{ delivery.deliveryID }}</p>
+    <p>Agent ID: {{ delivery.agentID }}</p>
+    <p>Status: {{ delivery.status }}</p>
+    <p>Estimated Time of Arrival: {{ delivery.estimatedTimeOfArrival | date:'medium' }}</p>
+    <h4>Time Left for Delivery:</h4>
+    <p>{{ countdown }}</p>
+  </div>
+  <div *ngIf="!order && !delivery">
+    <p>No order or delivery details available.</p>
+  </div>
+  <button type="button" class="btn mt-3" (click)="gotoProfile()" style="background-color: yellow; font-weight: bold;">
+    Return to Profile
+  </button>
+</div>

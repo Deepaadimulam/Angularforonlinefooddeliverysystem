@@ -1,0 +1,129 @@
+<div class="custom-container mt-5 text-center" style=" padding: 20px; border-radius: 10px;">
+
+  <h2 >Place Order</h2>
+ 
+  <!-- Search Bar -->
+ 
+  <div *ngIf="!selectedRestaurant">
+ 
+   <input type="text" class="form-control mb-3" placeholder="Search Restaurants" [(ngModel)]="searchQuery" (input)="searchRestaurants()" style="width: 50%; margin: 0 auto;">
+ 
+   <!-- Restaurant Selection View -->
+ 
+   <div class="row">
+ 
+    <div class="col-md-4" *ngFor="let restaurant of filteredRestaurants">
+ 
+     <div class="card mb-2" style="width: 90%; margin: 0 auto;">
+ 
+      <img class="card-img-top fixed-image" [src]="restaurant.logoUrl" alt="{{ restaurant.name }}">
+ 
+      <div class="card-body">
+ 
+       <h5 class="card-title">{{ restaurant.name }}</h5>
+ 
+       <!-- <p class="card-text">Rating: {{ restaurant.rating }}</p> -->
+ 
+       <button class="btn btn-primary" (click)="onRestaurantSelect(restaurant.restaurantID)" style="background-color: yellow; color: black; border-color: yellow; font-weight: bold;">Choose</button>
+ 
+      </div>
+ 
+     </div>
+ 
+    </div>
+ 
+   </div>
+ 
+  </div>
+ 
+  <!-- Menu Items View -->
+ 
+  <div *ngIf="selectedRestaurant && !checkoutView">
+ 
+   <button class="btn btn-secondary mb-3" (click)="goBack()" style="background-color: yellow; color: black; border-color: yellow; position: absolute; left: 20px;">Back</button>
+ 
+   <h3 class="text-white">Menu Items</h3>
+ 
+   <div class="row">
+ 
+    <div class="col-md-3" *ngFor="let item of menuItems" style="padding: 5px;">
+ 
+     <div class="card mb-2" style="width: 90%; margin: 0 auto;">
+ 
+      <img class="card-img-top fixed-image" [src]="item.imageUrl" alt="{{ item.name }}">
+ 
+      <div class="card-body">
+ 
+       <h5 class="card-title">{{ item.name }}</h5>
+ 
+       <p class="card-text">{{ item.description }}</p>
+ 
+       <p class="card-text">Price: ₹{{ item.price }}</p>
+ 
+       <button class="btn btn-success" (click)="addToCart(item)" style="background-color: yellow; color: black; border-color: yellow; font-weight: bold;">Add to Cart <span *ngIf="item.added" class="badge badge-success">+1</span></button>
+ 
+      </div>
+ 
+     </div>
+ 
+    </div>
+ 
+   </div>
+ 
+   <div class="text-center mb-3">
+ 
+    <button class="btn btn-primary" (click)="showCheckout()" [disabled]="selectedItems.length === 0" style="background-color: yellow; color: black; border-color: yellow; font-weight: bold;">Checkout</button>
+ 
+   </div>
+ 
+  </div>
+ 
+  <!-- Checkout View -->
+ 
+  <div *ngIf="checkoutView">
+ 
+    <button class="btn btn-secondary mb-3" (click)="goBackToMenu()" style="background-color: yellow; color: black; border-color: yellow; position: relative; top: 0; left: 0;">Back to Menu</button>
+   <div class="row">
+ 
+    <div class="col-md-3" *ngFor="let item of selectedItems" style="padding: 5px;">
+ 
+     <div class="card mb-2" style="width: 90%; margin: 0 auto;">
+ 
+      <img class="card-img-top fixed-image" [src]="item.imageUrl" alt="{{ item.name }}">
+ 
+      <div class="card-body">
+ 
+       <h5 class="card-title">{{ item.name }}</h5>
+ 
+       <p class="card-text">{{ item.description }}</p>
+ 
+       <p class="card-text">Price: ₹{{ item.price }}</p>
+ 
+       <div class="d-flex justify-content-between align-items-center">
+ 
+        <button class="btn btn-danger" (click)="decreaseQuantity(item)" style="background-color: yellow; color: black; border-color: yellow; font-weight: bold;">-</button>
+        <span style="font-size: 1.2em;">{{ item.quantity }}</span>
+ 
+
+ 
+        <button class="btn btn-success" (click)="increaseQuantity(item)" style="background-color: yellow; color: black; border-color: yellow; font-weight: bold;">+</button>
+ 
+       </div>
+ 
+       <button class="btn btn-danger mt-2" (click)="removeFromCart(item)" style="background-color: yellow; color: black; border-color: yellow; font-weight: bold;">Remove from Cart</button>
+ 
+      </div>
+ 
+     </div>
+ 
+    </div>
+ 
+   </div>
+ 
+   <h4>Total Amount: ₹{{ totalAmount }}</h4>
+ 
+   <button class="btn btn-primary" (click)="confirmOrder()" style="background-color: yellow; color: black; border-color: yellow; font-weight: bold;">Confirm Order</button>
+ 
+  </div>
+ 
+</div>

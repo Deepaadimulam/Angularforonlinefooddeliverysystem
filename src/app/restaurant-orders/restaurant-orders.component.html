@@ -1,0 +1,79 @@
+<div class="container mt-5">
+
+    <h2>All Orders for {{ restaurant.name }}</h2>
+   
+   
+   
+    <div *ngIf="restaurantOrders.length > 0; else noOrders">
+   
+     <div *ngFor="let order of restaurantOrders" class="order-card mb-3">
+   
+      <h4>Order ID: {{ order.orderID }}</h4>
+   
+      <p>Status: {{ order.status }}</p>
+   
+      <p>Customer ID: {{ order.customerID }}</p>
+   
+      <p>Total Amount: ₹{{ order.totalAmount }}</p>
+   
+   
+   
+      <!-- Menu Items -->
+   
+      <h5>Menu Items:</h5>
+   
+      <ul>
+   
+       <li *ngFor="let item of order.menuItems">
+   
+        {{ item.name }} - ₹{{ item.price }}
+   
+       </li>
+   
+      </ul>
+   
+   
+   
+      <!-- Status Update -->
+   
+      <div class="status-update-section">
+   
+       <label for="statusSelect{{order.orderID}}">Update Status:</label><br>
+   
+       <select [id]="'statusSelect' + order.orderID" #statusSelect>
+   
+        <option *ngFor="let st of statuses" [value]="st">{{ st }}</option>
+   
+       </select><br>
+   
+       <button class="btn btn-primary mt-2"
+   
+           (click)="updateOrderStatus(order.orderID, statusSelect.value)" style="background-color: yellow; font-weight: bold; color: black;">
+   
+        Update
+   
+       </button>
+   
+      </div>
+   
+     </div>
+   
+    </div>
+   
+   
+   
+    <ng-template #noOrders>
+   
+     <p>No orders found for this restaurant.</p>
+   
+    </ng-template>
+   
+   
+   
+    <button class="btn btn-secondary mt-3" style="background-color: yellow; font-weight: bold; color: black;" (click)="goToProfile()">
+   
+     Back to Profile
+   
+    </button>
+   
+   </div>

@@ -1,0 +1,122 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+
+  
+}     
+   h2 {
+   
+    text-align: center;
+   
+    color:  #6c63ff;;
+   
+    margin-bottom: 20px;
+    
+    font-weight: bold;
+   
+   }
+   
+   
+   
+   h3, h4 {
+   
+    color:  #6c63ff;;
+   
+    margin-top: 15px;
+    
+    font-weight: bold;
+   
+   }
+   
+   
+   
+   p {
+   
+    font-size: 16px;
+   
+    color: #333;
+   
+    margin: 5px 0;
+   
+   }
+   
+   
+   
+   .countdown {
+   
+    font-size: 18px;
+   
+    font-weight: bold;
+   
+    color: #dc3545;
+   
+    text-align: center;
+   
+    margin-top: 10px;
+   
+   }
+   
+   
+   
+   .no-details {
+   
+    text-align: center;
+   
+    font-style: italic;
+   
+    color: #666;
+   
+   }
+   
+   
+   
+   /* Status Badges */
+   
+   .status {
+   
+    display: inline-block;
+   
+    padding: 5px 10px;
+   
+    border-radius: 5px;
+   
+    font-weight: bold;
+   
+    text-transform: uppercase;
+   
+   }
+   
+   
+   
+   .status.pending {
+   
+    background: #ffc107;
+   
+    color: #333;
+   
+   }
+   
+   
+   
+   .status.delivered {
+   
+    background: #28a745;
+   
+    color: #fff;
+   
+   }
+   
+   
+   
+   .status.in-progress {
+   
+    background: #17a2b8;
+   
+    color: #fff;
+   
+   }

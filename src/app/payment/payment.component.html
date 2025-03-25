@@ -1,0 +1,27 @@
+<div class="container mt-5">
+
+  <h2>Payment</h2>
+ 
+  <div class="form-group">
+ 
+   <label>Select Payment Method</label>
+ 
+   <select class="form-control" #paymentMethod>
+ 
+    <option *ngFor="let method of paymentMethods" [value]="method">{{ method }}</option>
+ 
+   </select>
+ 
+  </div>
+ 
+  <button class="btn btn-primary mt-3" 
+ 
+      (click)="processPayment(paymentMethod.value)" 
+ 
+      style="background-color: yellow; color: black; border-color: yellow;">
+ 
+   Pay Now
+ 
+  </button>
+ 
+ </div>

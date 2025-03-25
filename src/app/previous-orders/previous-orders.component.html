@@ -1,0 +1,23 @@
+<div class="previous-orders-container">
+    <h2 >Previous Orders</h2>
+    <div *ngIf="previousOrders.length > 0; else noOrders">
+      <div *ngFor="let order of previousOrders" class="order-card">
+        
+        
+        <h3>Ordered MenuItems</h3>
+        <ul>
+          <li *ngFor="let item of order.menuItems">
+            {{ item.name }} -  {{ item.price }}
+          </li>
+        </ul>
+        <p>Total: {{ order.totalAmount }}</p>
+        <p>Restaurant: {{ restaurantNames[order.restaurantID] }}</p>
+        <p>Status: Completed</p>
+        <button type="button" class="btn btn-warning" (click)="trackOrder(order.orderID)" style="background-color: yellow;">Track Order</button>
+     
+      </div>
+    </div>
+    <ng-template #noOrders>
+      <p>No previous orders found.</p>
+    </ng-template>
+  </div>

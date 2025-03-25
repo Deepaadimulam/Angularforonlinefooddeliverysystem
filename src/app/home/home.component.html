@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Food Delivery Management System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .hero-section {
+      min-height: 60vh;
+      width: 100%;
+      background: #6c63ff no-repeat center center / cover;
+      position: relative;
+      padding: 2rem;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    .custom-card {
+      background-color: #6c63ff ; /* Purple background */
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+    .custom-card:hover {
+      transform: translateY(-3px);
+    }
+    .custom-card .card-title,
+    .custom-card .card-text {
+      color: #fff;
+    }
+    .btn-yellow {
+      background-color: #ffc107;
+      color: #000;
+      border: none;
+      font-weight: bold;
+    }
+    .btn-yellow:hover {
+      background-color: #ffca2c;
+    }
+    .text-white {
+      color: #fff;
+    }
+    @media (max-width: 767px) {
+      .hero-section {
+        min-height: 50vh;
+      }
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+      .hero-section p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-section d-flex flex-column justify-content-center align-items-center text-center">
+    <h1 class="display-4 font-weight-bold mb-3">Online Food Delivery</h1>
+    <p class="lead mb-4">Fast, Fresh & Delicious</p>
+    <button class="btn btn-lg btn-yellow font-weight-bold" type="button" (click)="login()">Order Now</button>
+  </div>
+
+  <div class="container mt-5 text-center">
+    <h2 class="mb-4 text-yellow">Manage Your Orders & Restaurants</h2>
+    <div class="row justify-content-center">
+      <!-- Restaurant Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card custom-card h-100">
+          <div class="card-body">
+            <h3 class="card-title">Restaurant Login</h3>
+            <p class="card-text">Manage your restaurant profile and menu items.</p>
+            <button class="btn btn-yellow m-2" type="button" (click)="restaurantregister()">Register</button>
+            <button class="btn btn-yellow m-2" type="button" (click)="restaurantlogin()">Login</button>
+          </div>
+        </div>
+      </div>
+      <!-- Customer Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card custom-card h-100">
+          <div class="card-body">
+            <h3 class="card-title">Customer Login</h3>
+            <p class="card-text">Order your favorite meals from various restaurants.</p>
+            <button class="btn btn-yellow m-2" type="button" (click)="register()">Register</button>
+            <button class="btn btn-yellow m-2" type="button" (click)="login()">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
