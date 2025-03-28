@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from '../Service/restaurant.service';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { MenuService } from '../Service/menu.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,7 +22,10 @@ export class RestaurantProfileComponent implements OnInit {
     private restaurantService: RestaurantService,
     private menuItemService: MenuService,
     private router: Router
-  ) {}
+  ) {
+
+   
+  }
 
   ngOnInit(): void {
     const restaurantData = localStorage.getItem('restaurant');
@@ -30,10 +33,14 @@ export class RestaurantProfileComponent implements OnInit {
       this.restaurant = JSON.parse(restaurantData);
       this.loadMenuItems();
     } else {
-      this.router.navigate(['/restaurant-login']);
+      this.router.navigate(['/Restaurantlogin']);
     }
+
+   
+  
   }
 
+  
   loadMenuItems(): void {
     this.menuItemService.getMenuByRestaurantID(this.restaurant.restaurantID).subscribe(
       (items: any[]) => {
@@ -103,8 +110,14 @@ export class RestaurantProfileComponent implements OnInit {
   }
 
   viewOrders(): void {
-
     this.router.navigate(['/restaurant-orders']);
-  
-   }
+  }
+
+  logout(): void {
+    localStorage.removeItem('restaurant');
+    this.router.navigate(['/Restaurantlogin']);
+  }
+
+
+
 }

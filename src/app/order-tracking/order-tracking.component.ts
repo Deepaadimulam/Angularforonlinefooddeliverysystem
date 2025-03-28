@@ -82,7 +82,7 @@ export class OrderTrackingComponent   implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
 
-    // Clean up any subscriptions
+
 
     if (this.subscription) {
 
@@ -142,8 +142,7 @@ export class OrderTrackingComponent   implements OnInit, OnDestroy {
 
   private startCountdown(orderId: number): void {
 
-    // Clear previous countdown subscription if needed
-
+   
     if (this.subscription) {
 
       this.subscription.unsubscribe();
@@ -152,7 +151,7 @@ export class OrderTrackingComponent   implements OnInit, OnDestroy {
 
 
 
-    // This sets up a 1-second interval for the countdown
+
 
     this.subscription = interval(1000).subscribe(() => {
 

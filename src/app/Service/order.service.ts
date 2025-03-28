@@ -11,7 +11,7 @@ export class OrderService {
 
   constructor(private http: HttpClient) {}
  
-  // Place a new order
+
 
   
  
@@ -19,20 +19,18 @@ export class OrderService {
     return this.http.post<Order>(`${this.apiUrl}/place?customerID=${customerID}`, menuItems);
   }
  
-  // Get orders by customer ID
- 
+
   getOrdersByCustomerID(customerID: number): Observable<Order[]> {
  
    return this.http.get<Order[]>(`${this.apiUrl}/customer/${customerID}`);
  
   }
- 
-  // Get order by ID
+
  
   findByOrderID(orderID: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/${orderID}`);
   }
-  // Delete an order
+
  
   deleteOrder(orderID: number): Observable<void> {
  

@@ -3,14 +3,14 @@
   }
   
   .order-card {
-    background-color: #6c63ff; /* Dark purple background */
-    color: yellow; /* Yellow text */
+    background-color: #6c63ff; 
+    color: yellow; 
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    font-weight: bold; /* Increase font weight */
+    font-weight: bold; 
   }
   
   .order-card:hover {
@@ -20,12 +20,12 @@
   
   .order-card h4, .order-card h5 {
     margin-bottom: 10px;
-    font-weight: bold; /* Increase font weight */
+    font-weight: bold; 
   }
   
   .order-card p {
     margin: 5px 0;
-    font-weight: bold; /* Increase font weight */
+    font-weight: bold;
   }
   
   .order-card ul {
@@ -35,12 +35,12 @@
   
   .order-card li {
     margin: 5px 0;
-    font-weight: bold; /* Increase font weight */
+    font-weight: bold; 
   }
   
   .no-orders {
-    color: #ffc107; /* Yellow text */
+    color: #ffc107; 
     text-align: center;
     margin-top: 20px;
-    font-weight: bold; /* Increase font weight */
+    font-weight: bold; 
   }

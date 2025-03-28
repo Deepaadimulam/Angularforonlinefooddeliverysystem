@@ -19,10 +19,10 @@ export class PaymentService {
     return this.http.post<{ clientSecret: string }>(`${this.apiUrl}/create-payment-intent`, { orderID, currency });
   }
 
-  // Confirm payment for an order
+
   confirmPayment(orderID: number, paymentMethod: string): Observable<Payment> {
 
-  // Using GET here for simplicity
+
 
   return this.http.get<Payment>(
 
@@ -32,17 +32,16 @@ export class PaymentService {
 
 }
 
-  // Get payment by order ID
+
   getPaymentByOrderID(orderID: number): Observable<Payment> {
     return this.http.get<Payment>(`${this.apiUrl}/order/${orderID}`);
   }
 
-  // Get all payments
+
   getAllPayments(): Observable<Payment[]> {
     return this.http.get<Payment[]>(`${this.apiUrl}/all`);
   }
 
-  // Delete payment by ID
   deletePayment(paymentID: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${paymentID}`);
   }

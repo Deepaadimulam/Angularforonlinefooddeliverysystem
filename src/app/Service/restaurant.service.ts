@@ -10,8 +10,7 @@ export class RestaurantService {
   private apiUrl = 'http://localhost:8089/restaurants';
 
   constructor(private http: HttpClient) {}
- 
-  // Get all restaurants
+
  
   getAllRestaurants(): Observable<Restaurant[]> {
     
@@ -20,7 +19,7 @@ export class RestaurantService {
  
   }
  
-  // Get restaurant by ID
+
  
   getRestaurantById(restaurantID: number): Observable<Restaurant> {
  
@@ -28,15 +27,14 @@ export class RestaurantService {
  
   }
  
-  // Add a new restaurant
- 
+
   addRestaurant(restaurant: Restaurant): Observable<Restaurant> {
  
    return this.http.post<Restaurant>(`${this.apiUrl}/add`, restaurant);
  
   }
  
-  // Update a restaurant
+
  
   updateRestaurant(restaurant: Restaurant): Observable<Restaurant> {
  
@@ -44,7 +42,7 @@ export class RestaurantService {
  
   }
  
-  // Delete a restaurant
+
  
   deleteRestaurant(restaurantID: number): Observable<void> {
  

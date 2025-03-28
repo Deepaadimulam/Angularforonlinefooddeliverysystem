@@ -36,13 +36,13 @@ export class RestaurantOrdersComponent implements OnInit {
  
   ngOnInit(): void {
  
-   // 1) Retrieve the restaurant info from localStorage
+   
  
    const restaurantData = localStorage.getItem('restaurant');
  
    if (!restaurantData) {
  
-    // If not found, redirect to login
+   
  
     this.router.navigate(['/restaurant-login']);
  
@@ -56,7 +56,7 @@ export class RestaurantOrdersComponent implements OnInit {
  
  
  
-   // 2) Fetch orders for this restaurant
+
  
    this.loadOrdersForRestaurant();
  
@@ -96,7 +96,7 @@ export class RestaurantOrdersComponent implements OnInit {
  
      next: (updatedOrder) => {
  
-      // Find the order in restaurantOrders and update its status
+      
  
       const index = this.restaurantOrders.findIndex(o => o.orderID === updatedOrder.orderID);
  
@@ -122,7 +122,7 @@ export class RestaurantOrdersComponent implements OnInit {
  
  
  
-  // Optional: navigate back to restaurant profile
+  
  
   goToProfile(): void {
  

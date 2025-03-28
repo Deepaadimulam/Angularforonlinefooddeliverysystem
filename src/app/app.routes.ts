@@ -14,6 +14,9 @@ import { PaymentSuccessComponent } from './payment-success/payment-success.compo
 import { PaymentCancelComponent } from './payment-cancel/payment-cancel.component';
 import { PreviousOrdersComponent } from './previous-orders/previous-orders.component';
 import { RestaurantOrdersComponent } from './restaurant-orders/restaurant-orders.component';
+import { authGuard } from './auth.guard';
+import { restaurantAuthGuardGuard } from './restaurant-auth-guard.guard';
+
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -22,22 +25,22 @@ export const routes: Routes = [
 
      { path: 'login', component: LoginComponent },
    
-     { path: 'profile', component: ProfileComponent },
-     { path: 'update', component: UpdateComponent },
+     { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
+     { path: 'update', component: UpdateComponent,canActivate: [authGuard]},
 
 
-    { path: 'order', component: OrderComponent },
+    { path: 'order', component: OrderComponent ,canActivate: [authGuard]},
     
    
      { path: 'payment/:orderId', component: PaymentComponent },
    
-    { path: 'order-tracking/:orderId', component: OrderTrackingComponent },
+    { path: 'order-tracking/:orderId', component: OrderTrackingComponent,canActivate: [authGuard]},
     { path: 'Restaurantregister', component: RestaurantregisterComponent },
     { path: 'Restaurantlogin', component: RestaurantloginComponent },
-    { path: 'restaurant-profile', component: RestaurantProfileComponent },
+    { path: 'restaurant-profile', component: RestaurantProfileComponent, canActivate: [restaurantAuthGuardGuard] },
     { path: 'payment-success', component: PaymentSuccessComponent },
     { path: 'payment-cancel', component: PaymentCancelComponent },
-  { path: 'previousorders', component: PreviousOrdersComponent },
+  { path: 'previousorders', component: PreviousOrdersComponent,canActivate: [authGuard] },
   { path: 'restaurant-orders', component: RestaurantOrdersComponent }, 
 
    

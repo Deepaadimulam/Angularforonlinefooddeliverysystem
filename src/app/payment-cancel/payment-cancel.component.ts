@@ -22,7 +22,7 @@ export class PaymentCancelComponent  implements OnInit {
 
   ngOnInit(): void {
 
-    // Retrieve the orderId from localStorage
+
 
     const storedId = localStorage.getItem('currentOrderId');
 
@@ -46,15 +46,14 @@ export class PaymentCancelComponent  implements OnInit {
 
     if (this.orderId > 0) {
 
-      // Navigate back to the Payment page
-
+      
       this.router.navigate(['/payment', this.orderId]);
 
     } else {
 
       alert('No valid orderId found. Please start a new order.');
 
-      // Or navigate somewhere else
+      
 
     }
 

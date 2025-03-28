@@ -12,7 +12,7 @@ export class DeliveryService {
   constructor(private http: HttpClient) {}
   
  
-  // Assign a delivery agent to an order
+
  
   assignDeliveryAgent(orderID: number, agentID: number): Observable<Delivery> {
  
@@ -20,15 +20,14 @@ export class DeliveryService {
  
   }
  
-  // Get all deliveries
+
  
   getAllDeliveries(): Observable<Delivery[]> {
  
    return this.http.get<Delivery[]>(`${this.apiUrl}/all`);
  
   }
- 
-  // Delete a delivery
+
  
   deleteDelivery(deliveryID: number): Observable<void> {
  

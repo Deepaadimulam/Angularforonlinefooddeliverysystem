@@ -14,7 +14,7 @@ export class CustomerServiceService {
 
   constructor(private http: HttpClient) {}
  
-  // Register a new customer
+  
  
   registerCustomer(customer: Customer): Observable<Customer> {
  
@@ -22,7 +22,7 @@ export class CustomerServiceService {
  
   }
  
-  // Login a customer
+
   loginMethod(email: string, password: string): Observable<Customer> {
     return this.http.get<Customer>(`${this.apiUrl}/login?email=${email}&password=${password}`);
   }

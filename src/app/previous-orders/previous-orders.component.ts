@@ -19,7 +19,7 @@ export class PreviousOrdersComponent  implements OnInit {
 
   previousOrders: Order[] = [];
  
-  restaurantNames: { [key: number]: string } = {}; // Store restaurant names by restaurantID
+  restaurantNames: { [key: number]: string } = {}; 
 
   constructor(
     private orderService: OrderService,
@@ -49,7 +49,7 @@ export class PreviousOrdersComponent  implements OnInit {
     this.previousOrders.forEach(order => {
       this.restaurantService.getRestaurantById(order.restaurantID).subscribe(
         restaurant => {
-          this.restaurantNames[order.restaurantID] = restaurant.name; // Store restaurant name by restaurantID
+          this.restaurantNames[order.restaurantID] = restaurant.name;
         },
         error => console.error('Error fetching restaurant details', error)
       );

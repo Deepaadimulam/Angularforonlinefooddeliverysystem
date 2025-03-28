@@ -12,6 +12,7 @@ import { RestaurantloginComponent } from './restaurantlogin/restaurantlogin.comp
 import { RestaurantregisterComponent } from './restaurantregister/restaurantregister.component';
 import { PreviousOrdersComponent } from './previous-orders/previous-orders.component';
 import { RestaurantOrdersComponent } from './restaurant-orders/restaurant-orders.component';
+import { authGuard } from './auth.guard';
 
 @Component({
   selector: 'app-root',

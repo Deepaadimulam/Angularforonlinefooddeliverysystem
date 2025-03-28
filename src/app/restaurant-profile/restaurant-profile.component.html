@@ -2,13 +2,13 @@
   <div class="hero-content">
     <h1 class="banner-title">{{ restaurant.name }}</h1>
     <p class="banner-subtitle">{{ restaurant.address }}</p>
+    <button class="btn btn-yellow m-2" (click)="logout()" style="background-color: yellow; font-weight: bold; color: black;">Logout</button>
   </div>
 </div>
 
-<!-- Main Container for Menu and Form -->
 <div class="restaurant-profile-container">
   <div *ngIf="!formVisible">
-    <!-- Menu Items Section -->
+
     <h3 class="mt-4">Menu Items</h3>
     <div class="menu-items-grid">
       <div class="menu-item-card" *ngFor="let item of menuItems">
@@ -25,17 +25,11 @@
       </div>
     </div>
 
-    <!-- Add Button -->
+   
     <button class="btn btn-yellow m-2" (click)="showForm()" style="background-color: yellow; font-weight: bold; color: black;">Add Menu Item</button>
-
-    <button class="btn btn-yellow m-2" (click)="viewOrders()" style="background-color: yellow; font-weight: bold; color: black;">
-
-      View All Orders
-    
-     </button>
+    <button class="btn btn-yellow m-2" (click)="viewOrders()" style="background-color: yellow; font-weight: bold; color: black;">View All Orders</button>
   </div>
 
-  <!-- Add/Edit Form -->
   <div *ngIf="formVisible" class="container mt-5 text-center">
     <div class="row justify-content-center">
       <div class="col-md-4">

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerServiceService } from '../Service/customer-service.service';
 import { AuthService } from '../Service/auth.service';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Customer } from '../model/Customer';
@@ -33,7 +33,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
  
    this.loadCustomerProfile();
- 
   }
  
   loadCustomerProfile(): void {

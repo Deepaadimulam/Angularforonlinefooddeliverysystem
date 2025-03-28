@@ -37,7 +37,7 @@ export class LoginComponent {
           this.router.navigate(['/profile']);
         },
         error => {
-          console.error('Login failed:', error); // Log error details
+          console.error('Login failed:', error); 
           this.errorMessage = 'Login unsuccessful. You do not have an account. Please register.';
         }
       );

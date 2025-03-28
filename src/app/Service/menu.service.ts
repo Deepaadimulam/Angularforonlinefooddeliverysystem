@@ -15,8 +15,7 @@ export class MenuService {
   updateMenuItem(menuItem: MenuItem, restaurantID: number): Observable<MenuItem> {
     return this.http.put<MenuItem>(`${this.apiUrl}/update/${restaurantID}`, menuItem);
   }
- 
-  // Get menu items by restaurant ID
+
  
   getMenuByRestaurantID(restaurantID: number): Observable<MenuItem[]> {
  
@@ -24,7 +23,7 @@ export class MenuService {
  
   }
  
-  // Add a new menu item
+
  
   addMenuItem(menuItem: MenuItem, restaurantID: number): Observable<MenuItem> {
  
@@ -32,7 +31,7 @@ export class MenuService {
  
   }
  
-  // Delete a menu item
+
  
   deleteMenuItem(itemID: number): Observable<void> {
  
