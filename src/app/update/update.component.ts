@@ -48,12 +48,12 @@ export class UpdateComponent implements OnInit {
       const updatedCustomer = { ...this.customer, ...this.updateForm.value };
       this.customerService.updateCustomer(updatedCustomer).subscribe(
         response => {
-          this.authService.setCustomer(response); // Update customer details in AuthService
+          this.authService.setCustomer(response); 
           this.router.navigate(['profile'])
                  },
         error => {
-          console.error('Profile update failed:', error); // Log error details
-          alert('Profile update failed: ' + error.error.message); // Access error message correctly
+          console.error('Profile update failed:', error); 
+          alert('Profile update failed: ' + error.error.message); 
         }
       );
     } else {
