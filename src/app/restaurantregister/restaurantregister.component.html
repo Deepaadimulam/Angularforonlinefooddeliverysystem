@@ -38,7 +38,7 @@
               <label class="text-white">Logo URL</label>
               <input type="text" class="form-control" formControlName="logoUrl">
             </div>
-            <button type="submit" class="btn btn-yellow" [disabled]="registerForm.invalid">Register</button>
+            <button type="submit" class="btn btn-yellow" [disabled]="registerForm.invalid" style="background-color: yellow; font-weight: bold;">Register</button>
           </form>
           <div *ngIf="errorMessage" class="alert alert-danger mt-3">
             {{ errorMessage }}

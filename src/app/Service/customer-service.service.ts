@@ -10,7 +10,7 @@ export class CustomerServiceService {
 
   
 
-  private apiUrl = 'http://localhost:8081';
+  private apiUrl = 'http://localhost:8081/customer';
 
   constructor(private http: HttpClient) {}
  

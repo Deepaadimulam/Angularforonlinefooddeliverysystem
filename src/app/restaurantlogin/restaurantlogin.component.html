@@ -20,7 +20,7 @@
                 <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</div>
               </div>
             </div>
-            <button type="submit" class="btn btn-yellow btn-block mt-3" [disabled]="loginForm.invalid">Login</button>
+            <button type="submit" class="btn btn-yellow btn-block mt-3" [disabled]="loginForm.invalid" style="background-color: yellow; font-weight: bold;">Login</button>
           </form>
           <div *ngIf="errorMessage" class="alert alert-danger mt-3 text-center">
             {{ errorMessage }}

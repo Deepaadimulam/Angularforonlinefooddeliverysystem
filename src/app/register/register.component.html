@@ -2,6 +2,7 @@
 
 <div class="container mt-5">
   <div class="row justify-content-center">
+
     <div class="col-md-4">
       <div class="card custom-card">
         <div class="card-body">
@@ -56,8 +57,9 @@
               </div>
             </div>
 
-            <button type="submit" class="btn btn-yellow m-2" [disabled]="registerForm.invalid">Register</button>
-            <button type="button" class="btn btn-yellow m-2" (click)="gotologin()">Login</button>
+            <button type="submit" class="btn btn-yellow m-2" [disabled]="registerForm.invalid"  style="background-color: yellow; font-weight: bold;">Register</button>
+        
+            <button type="button" class="btn btn-yellow m-2" (click)="gotologin()"  style="background-color: yellow; font-weight: bold;">Login</button>
           </form>
 
        

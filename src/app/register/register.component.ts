@@ -14,6 +14,7 @@ export class RegisterComponent {
   registerForm: FormGroup;
   errorMessage: string | null = null;
 
+
   constructor(
     private fb: FormBuilder,
     private customerService: CustomerServiceService,
@@ -33,6 +34,7 @@ export class RegisterComponent {
       this.customerService.registerCustomer(this.registerForm.value).subscribe(
         response => {
           console.log(response)
+         
           alert('Registration successful! Please login.');
           this.router.navigate(['/login']);
         },

@@ -15,6 +15,7 @@ import { Customer } from '../model/Customer';
 export class LoginComponent {
   loginForm: FormGroup;
   errorMessage: string | null = null;
+  successmessage:string|null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -39,7 +40,7 @@ export class LoginComponent {
         error => {
           console.error('Login failed:', error); 
           this.errorMessage = 'Login unsuccessful. You do not have an account. Please register.';
-        }
+        },
       );
     }
   }
